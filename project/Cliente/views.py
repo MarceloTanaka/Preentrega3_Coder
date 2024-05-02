@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+from . import models
+
+def home(request):
+    query = models.Cliente.objects.all()
+    context = {"clientes": query}
+    return render(request, "Clase/index.html", context)
