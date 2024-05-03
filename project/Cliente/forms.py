@@ -1,7 +1,7 @@
 from django import forms
+from . import models
 
-class ClienteForm(forms.Form):
-    nombre = forms.CharField()
-    apellido = forms.CharField()
-    email = forms.CharField()
-    pais = forms.InlineForeignKeyField
+class ClienteForm(forms.ModelForm):
+    class Meta:
+        model = models.Cliente
+        fields = "__all__"

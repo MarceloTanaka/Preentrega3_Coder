@@ -6,6 +6,11 @@
 
 {% block contenido %}
     
+    {% for cliente in clientes %}
+        <li>
+            {{cliente.nombre}}
+        </li>
+    {% endfor %}
     <a href="{% url 'Cliente:crearclientes' %}">Creación de clientes</a>
 
 {% endblock contenido %}

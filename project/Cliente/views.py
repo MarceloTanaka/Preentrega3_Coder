@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from . import models, forms
 
@@ -12,4 +12,7 @@ def crearclientes(request):
         form = forms.ClienteForm(request.POST)
         if form.is_valid():
             form.save()
-    return render(request, "Cliente/crearcliente.html")
+            return redirect("Cliente:home")
+    else:
+        form = forms.ClienteForm()
+    return render(request, "Cliente/crearcliente.html", context={"form": form})
