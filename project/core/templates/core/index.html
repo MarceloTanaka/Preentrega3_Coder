@@ -1,12 +1,12 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    <h1>Página inicial</h1>
+    <h1>Pagina inicial</h1>
 {% endblock title %}
 
 {% block contenido %}
    <ul>
-    <a href="">Cliente</a>
+    <a href="{% url 'Cliente:home' %}">Cliente</a>
    </ul>
    
 {% endblock contenido %}
