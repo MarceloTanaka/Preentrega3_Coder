@@ -12,7 +12,7 @@ class Pais(models.Model):
 class Cliente(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
-    email = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
     pais_origen_id = models.ForeignKey(
         Pais, on_delete=models.SET_NULL, blank=True, null=True, verbose_name="país de origen"
     )
