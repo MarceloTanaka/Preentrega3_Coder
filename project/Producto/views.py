@@ -16,3 +16,5 @@ def agregarproducto(request):
     else:
         form = forms.ProductoForm()
     return render(request, "Producto/agregarproducto.html", context={"form": form})
+
+

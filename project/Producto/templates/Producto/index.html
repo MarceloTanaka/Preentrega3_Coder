@@ -10,7 +10,7 @@
 
     {% for producto in productos %}
         <li>
-            {{producto.nombre}}
+            {{producto.nombre}} | {{producto.descripcion}} | ${{producto.precio}}
         </li>
     {% endfor %}
 
