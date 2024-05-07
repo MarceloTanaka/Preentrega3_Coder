@@ -6,6 +6,8 @@
 
 {% block contenido %}
     
+    <p><a href="{% url 'Opiniones:agregaropinion' %}"></a>Agregar una opinion</p>
+    
     {% for opinion in opiniones %}
         <li>
             {{opinion}}
@@ -13,5 +15,5 @@
     {% endfor %}
 
     <p><a href="{% url 'core:home' %}">Regresar a página principal</a></p>
-    
+
 {% endblock contenido %}

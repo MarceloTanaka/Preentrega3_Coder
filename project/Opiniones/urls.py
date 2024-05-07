@@ -5,4 +5,5 @@ app_name = "Opiniones"
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("agregaropinion/", views.agregaropinion, name="agregaropinion")
 ]
