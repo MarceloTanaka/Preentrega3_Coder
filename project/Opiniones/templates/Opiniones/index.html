@@ -6,8 +6,8 @@
 
 {% block contenido %}
     
-    <p><a href="{% url 'Opiniones:agregaropinion' %}"></a>Agregar una opinion</p>
-    
+    <p><a href="{% url 'Opiniones:agregaropinion' %}">Agregar una opinion</a></p>
+
     {% for opinion in opiniones %}
         <li>
             {{opinion}}
