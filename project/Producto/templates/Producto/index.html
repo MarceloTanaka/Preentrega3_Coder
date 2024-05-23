@@ -6,14 +6,39 @@
 
 {% block contenido %}
     
-    <p><a href="{% url 'Producto:agregarproducto' %}">Agregar productos</a></p>
+<style>
+    .boton {
+      display: block;
+      width: calc(100% - 40px); /* 40px de margen total (20px a cada lado) */
+      margin: 0 auto; /* Centra el botón horizontalmente */
+      background-color: #007bff;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      box-sizing: border-box; /* Incluye el padding en el ancho total */
+    }
+  
+    .boton:hover {
+      background-color: #0056b3;
+    }
+  </style>
 
+    <p><a href="{% url 'Producto:agregarproducto' %}" class="boton">Agregar producto</a></p>
+
+
+  <div class="row gx-5">
     {% for producto in productos %}
-        <li>
-            {{producto.nombre}} | {{producto.descripcion}} | ${{producto.precio}}
-        </li>
+    
+      {% include 'core/components/card.html'  with titulo=producto.nombre%}
+    
     {% endfor %}
-
+  </div>
+  
     <p><a href="{% url 'core:home' %}">Regresar a página principal</a></p>
 
 {% endblock contenido %}
