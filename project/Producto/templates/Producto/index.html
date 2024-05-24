@@ -1,7 +1,17 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    <h1>Producto</h1>
+<style>
+  /* Estilo para el título */
+  .titulo {
+    margin-left: 50px; /* Ajusta este valor según el margen deseado */
+    border-bottom: 4px solid black; /* Aumentar grosor de la línea */
+    padding-bottom: 5px; /* Espacio entre el texto y la línea */
+    margin-right: 50px
+  }
+</style>
+  
+  <h1 class="titulo">Producto</h1>
 {% endblock title %}
 
 {% block contenido %}
@@ -34,11 +44,9 @@
   <div class="row gx-5">
     {% for producto in productos %}
     
-      {% include 'core/components/card.html'  with titulo=producto.nombre %}
+      {% include 'core/components/card.html'  with titulo=producto.nombre texto=producto.precio%}
     
     {% endfor %}
   </div>
-
-    <p><a href="{% url 'core:home' %}">Regresar a página principal</a></p>
 
 {% endblock contenido %}

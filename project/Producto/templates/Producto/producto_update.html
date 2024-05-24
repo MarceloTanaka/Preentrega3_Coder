@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+   <h1>Modificar producto</h1> 
+{% endblock title %}
+
+{% block contenido %}
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table}} 
+        </table>
+        <p><button type="submit">Cambiar</button></p>
+    </form>
+
+    <div class ="fs-3 pb-4">
+        <a href="{% url 'Producto:home' %}">Volver</a>
+    </div>
+
+{% endblock contenido %}
