@@ -1,40 +1,30 @@
 from django.shortcuts import render, redirect
 from . import models, forms
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 def home(request):
     query = models.Producto.objects.all()
     context = {"productos": query}
     return render(request, "Producto/index.html", context)
 
+class ProductoCreate(CreateView):
+    model = models.Producto
+    form_class = forms.ProductoForm
+    success_url = reverse_lazy("Producto:home")
+    template_name = "Producto/producto_create.html"
 
-def agregarproducto(request):
-    if request.method == "POST":
-        form = forms.ProductoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("Producto:home")
-    else:
-        form = forms.ProductoForm()
-    return render(request, "Producto/agregarproducto.html", context={"form": form})
+class ProductoDetail(DetailView):
+    model = models.Producto
+    context_object_name = "producto"
 
-def producto_detail(request, pk):
-    query = models.Producto.objects.get(id=pk)
-    return render(request, "Producto/producto_detail.html", {"producto": query})
+class ProductoUpdate(UpdateView):
+    model = models.Producto
+    form_class = forms.ProductoForm
+    success_url = reverse_lazy("Producto:home")
+    template_name = "Producto/producto_update.html"
 
-def producto_update(request, pk: int):
-    query = models.Producto.objects.get(id=pk)
-    if request.method == "POST":
-        form = forms.ProductoForm(request.POST, instance=query)
-        if form.is_valid():
-            form.save()
-            return redirect("Producto:home")
-    else:
-        form = forms.ProductoForm(instance=query)
-    return render(request, "Producto/producto_update.html", context={"form": form})
-
-def producto_delete(request, pk: int):
-    query = models.Producto.objects.get(id=pk)
-    if request.method == "POST":
-        query.delete()
-        return redirect("Producto:home")
-    return render(request, "Producto/producto_delete.html", context={"producto": query})
+class ProductoDelete(DeleteView):
+    model = models.Producto
+    template_name = "Producto/producto_delete.html"
+    success_url = reverse_lazy("Producto:home")
