@@ -15,14 +15,41 @@
 
 {% block contenido %}
     
-    <p><a href="{% url 'Opiniones:agregaropinion' %}">Agregar una opinion</a></p>
+<style>
+    .boton {
+      display: block;
+      width: calc(100% - 40px); /* 40px de margen total (20px a cada lado) */
+      margin: 0 auto; /* Centra el botón horizontalmente */
+      background-color: #007bff;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      box-sizing: border-box; /* Incluye el padding en el ancho total */
+    }
+  
+    .boton:hover {
+      background-color: #0056b3;
+    }
+  </style>
+
+<style>
+    .contenido {
+        margin-left:50px;
+        margin-right:50px
+    }
+  </style>
+
+    <p><a href="{% url 'Opiniones:agregaropinion' %}" class="boton">Agregar una opinion</a></p>
 
     {% for opinion in opiniones %}
-        <li>
-            {{opinion.titulo}} | {{opinion.reseña}}
+        <li class="contenido">
+            {{opinion.titulo}} | {{opinion.reseña}} | {{opinion.fecha_actualizacion}}
         </li>
     {% endfor %}
-
-    <p><a href="{% url 'core:home' %}">Regresar a página principal</a></p>
 
 {% endblock contenido %}

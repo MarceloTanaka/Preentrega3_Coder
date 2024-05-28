@@ -1,12 +1,27 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-   <h1>Modificar producto</h1> 
+<style>
+    /* Estilo para el título */
+    .titulo {
+      margin-left: 50px; /* Ajusta este valor según el margen deseado */
+      border-bottom: 4px solid black; /* Aumentar grosor de la línea */
+      padding-bottom: 5px; /* Espacio entre el texto y la línea */
+      margin-right: 50px
+    }
+  </style>
+   <h1 class="titulo">Modificar producto</h1> 
 {% endblock title %}
 
 {% block contenido %}
-    
-    <form action="" method="post">
+<style>
+    .contenido {
+        margin-left:50px;
+        margin-right:50px
+    }
+  </style>
+
+    <form action="" method="post" class="contenido">
         {% csrf_token %}
         <table>
             {{ form.as_table}} 
@@ -14,7 +29,7 @@
         <p><button type="submit">Cambiar</button></p>
     </form>
 
-    <div class ="fs-3 pb-4">
+    <div class ="fs-3 pb-4 contenido">
         <a href="{% url 'Producto:home' %}">Volver</a>
     </div>
 

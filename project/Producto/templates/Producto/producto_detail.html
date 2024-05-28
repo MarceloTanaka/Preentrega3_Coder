@@ -1,18 +1,33 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-   <h1>Detalle de producto</h1> 
+<style>
+    /* Estilo para el título */
+    .titulo {
+      margin-left: 50px; /* Ajusta este valor según el margen deseado */
+      border-bottom: 4px solid black; /* Aumentar grosor de la línea */
+      padding-bottom: 5px; /* Espacio entre el texto y la línea */
+      margin-right: 50px
+    }
+  </style>
+   <h1 class="titulo">Detalle de producto</h1> 
 {% endblock title %}
 
 {% block contenido %}
-    
-    <ul>
+<style>
+    .contenido {
+        margin-left:50px;
+        margin-right:50px
+    }
+  </style>
+
+    <ul class="contenido">
         <li>Nombre: {{producto.nombre}}</li>
         <li>Descripción: {{producto.descripcion}}</li>
         <li>Precio: ${{producto.precio}}</li>
     </ul>
 
-    <div class ="fs-3 pb-4">
+    <div class ="fs-3 pb-4 contenido">
         <a href="{% url 'Producto:home' %}">Volver</a>
     </div>
 
