@@ -16,6 +16,7 @@ class Cliente(models.Model):
     pais_origen_id = models.ForeignKey(
         Pais, on_delete=models.SET_NULL, blank=True, null=True, verbose_name="país de origen"
     )
+    avatar = models.ImageField(upload_to="avatares", null=True, blank=True)
 
     def __str__(self):
         return f"{self.apellido}, {self.nombre}"

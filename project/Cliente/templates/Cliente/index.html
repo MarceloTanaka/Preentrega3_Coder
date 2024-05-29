@@ -43,12 +43,11 @@
   </style>
     <p><a href="{% url 'Cliente:crearclientes' %}" class="boton">Agregar cliente</a></p>
     
-    {% for cliente in clientes %}
-        <li class="contenido">
-            {{cliente.nombre}}
-        </li>
-    {% endfor %}
-    
-
+    <ul class="list-group">
+      {% for cliente in clientes %}
+          <li class="list-group-item">{{ cliente.nombre }}</li>
+      {% endfor %}
+  </ul>
+  
 {% endblock contenido %}
 

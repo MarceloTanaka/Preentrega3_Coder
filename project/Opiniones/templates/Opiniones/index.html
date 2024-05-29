@@ -46,10 +46,15 @@
 
     <p><a href="{% url 'Opiniones:agregaropinion' %}" class="boton">Agregar una opinion</a></p>
 
-    {% for opinion in opiniones %}
-        <li class="contenido">
-            {{opinion.titulo}} | {{opinion.reseña}} | {{opinion.fecha_actualizacion}}
-        </li>
-    {% endfor %}
+    <ul class="list-group contenido">
+      {% for opinion in opiniones %}
+          <li class="list-group-item">
+              <h5 class="mb-1">{{ opinion.titulo }}</h5>
+              <p class="mb-1">{{ opinion.reseña }}</p>
+              <small>{{ opinion.fecha_actualizacion }}</small>
+          </li>
+      {% endfor %}
+  </ul>
+  
 
 {% endblock contenido %}
