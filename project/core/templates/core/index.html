@@ -2,6 +2,11 @@
 {% load static %}
 
 {% block contenido %}
+
+    {% if user.is_authenticated %}
+        {{mensaje}}
+        <p class="fs-2">Bienvenido {{user.username}}</p>
+    {% endif %}
 <header class="bg-dark py-5">
     <div class="container px-5">
         <div class="row gx-5 align-items-center justify-content-center">
