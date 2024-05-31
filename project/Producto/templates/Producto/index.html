@@ -15,7 +15,7 @@
 {% endblock title %}
 
 {% block contenido %}
-    
+
 <style>
     .boton {
       display: block;
@@ -36,17 +36,19 @@
     .boton:hover {
       background-color: #0056b3;
     }
-  </style>
 
-    <p><a href="{% url 'Producto:producto_create' %}" class="boton">Agregar producto</a></p>
+</style>
 
+    <div class="text-center mb-4">
+        <a href="{% url 'Producto:producto_create' %}" class="btn boton">Agregar producto</a>
+    </div>
 
-  <div class="row gx-5">
-    {% for producto in productos %}
-    
-      {% include 'core/components/card.html'  with titulo=producto.nombre texto=producto.precio%}
-    
-    {% endfor %}
-  </div>
+<div class="container mt-4">
+    <div class="row gx-5">
+        {% for producto in productos %}
+            {% include 'core/components/card.html' with titulo=producto.nombre texto=producto.precio %}
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock contenido %}
