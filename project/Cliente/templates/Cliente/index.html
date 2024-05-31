@@ -16,12 +16,10 @@
 {% block contenido %}
 <style>
   .contenido {
-      margin-left:50px;
-      margin-right:50px
+      margin: 0 50px;
   }
-</style>
-<style>
-    .boton {
+
+  .boton {
       display: block;
       width: calc(100% - 40px); /* 40px de margen total (20px a cada lado) */
       margin: 0 auto; /* Centra el botón horizontalmente */
@@ -39,15 +37,50 @@
   
     .boton:hover {
       background-color: #0056b3;
-    }
-  </style>
-    <p><a href="{% url 'Cliente:crearclientes' %}" class="boton">Agregar cliente</a></p>
-    
+  }
+
+  .list-group-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade sombra suave */
+      transition: transform 0.2s; /* Suaviza la transición del efecto hover */
+  }
+
+  .list-group-item:hover {
+      transform: scale(1.02); /* Efecto de agrandamiento al pasar el mouse */
+  }
+
+  .list-group-item a {
+      margin-left: 10px;
+      text-decoration: none;
+      color: #007bff;
+  }
+
+  .list-group-item a:hover {
+      color: #0056b3;
+  }
+</style>
+
+
+  <p><a href="{% url 'Cliente:cliente_create' %}" class="boton">Agregar cliente</a></p>
+
+<div class="contenido">  
     <ul class="list-group">
       {% for cliente in clientes %}
-          <li class="list-group-item">{{ cliente.nombre }}</li>
+          <li class="list-group-item">
+            {{ cliente.nombre }}
+            <span>
+              <a href="{% url 'Cliente:cliente_detail' cliente.id %}">Ver detalle</a>
+              <a href="{% url 'Cliente:cliente_update' cliente.id %}">Cambiar</a>
+              <a href="{% url 'Cliente:cliente_delete' cliente.id %}">Borrar</a>
+            </span>
+          </li>
       {% endfor %}
-  </ul>
-  
-{% endblock contenido %}
+    </ul>
+</div>
 
+{% endblock contenido %}
