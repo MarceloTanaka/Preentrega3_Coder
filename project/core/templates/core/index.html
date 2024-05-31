@@ -7,11 +7,11 @@
         <div class="row gx-5 align-items-center justify-content-center">
             <div class="col-lg-8 col-xl-7 col-xxl-6">
                 <div class="my-5 text-center text-xl-start">
-                    <h1 class="display-5 fw-bolder text-white mb-2">A Bootstrap 5 template for modern businesses</h1>
-                    <p class="lead fw-normal text-white-50 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
+                    <h1 class="display-5 fw-bolder text-white mb-2">Footcollection</h1>
+                    <p class="lead fw-normal text-white-50 mb-4">Una vista hacia el pasado. Los articulos de fútbol más retro e iconicos aquí. ¿Quieres revivir el pasado? Bienvenido a Footcollection</p>
                 </div>
             </div>
-            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://estaticos-cdn.prensaiberica.es/clip/79824d55-f456-4ae8-af58-3eebb56f369f_source-aspect-ratio_default_0.jpg" alt="..." /></div>
         </div>
     </div>
 </header>
@@ -19,51 +19,94 @@
 <section class="py-5" id="features">
     <div class="container px-5 my-5">
         <div class="row gx-5">
-            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">A better way to start building.</h2></div>
+            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Una manera de conocer y abrazar el pasado.</h2></div>
             <div class="col-lg-8">
                 <div class="row gx-5 row-cols-1 row-cols-md-2">
                     <div class="col mb-5 h-100">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
-                        <h2 class="h5">Featured title</h2>
-                        <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                        <h2 class="h5">Historia</h2>
+                        <p class="mb-0">Revive la historia del deporte más visto del mundo a través de sus productos.</p>
                     </div>
                     <div class="col mb-5 h-100">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
-                        <h2 class="h5">Featured title</h2>
-                        <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
-                    </div>
-                    <div class="col mb-5 mb-md-0 h-100">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                        <h2 class="h5">Featured title</h2>
-                        <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
-                    </div>
-                    <div class="col h-100">
-                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
-                        <h2 class="h5">Featured title</h2>
-                        <p class="mb-0">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                        <h2 class="h5">Partidazos</h2>
+                        <p class="mb-0">Disfruta de las camisetas usadas por los cracks en los partidazos del pasado.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Testimonial section-->
-<div class="py-5 bg-light">
-    <div class="container px-5 my-5">
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-10 col-xl-7">
-                <div class="text-center">
-                    <div class="fs-4 mb-4 fst-italic">"Working with Start Bootstrap templates has saved me tons of development time when building new projects! Starting with a Bootstrap template just makes things easier!"</div>
-                    <div class="d-flex align-items-center justify-content-center">
-                        <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                        <div class="fw-bold">
-                            Tom Ato
-                            <span class="fw-bold text-primary mx-1">/</span>
-                            CEO, Pomodoro
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Image section-->
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .image-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px; /* Espacio entre las imágenes */
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box; /* Incluye el padding en el ancho total */
+        background-color: #898989; /* Color de fondo de la sección */
+    }
+
+    .image-section img {
+        width: calc(50% - 10px); /* Cada imagen ocupará el 50% del ancho del contenedor menos el espacio entre las imágenes */
+        height: 400px; /* Altura fija para las imágenes */
+        object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
+        display: block;
+        border-radius: 15px; /* Bordes curvos */
+    }
+</style>
+</head>
+<body>
+<div class="image-section">
+    <img src="https://www.srdeportescr.com/wp-content/uploads/2023/11/Messi-Ronaldinho-1.jpg" alt="Descripción de la imagen 1">
+    <img src="https://a.espncdn.com/photo/2020/0420/r691187_3_1296x729_16-9.jpg" alt="Descripción de la imagen 2">
+</div>
+<!-- More image section-->
+
+<style>
+    .card {
+            border: 2px solid #000; /* Bordes más gruesos */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+
+    .card-img-top {
+        margin: 10px;
+        width: calc(100% - 20px); /* Ajusta el ancho para dejar margen */
+        height: 350px; /* Ajusta la altura según tus necesidades */
+        object-fit: cover; /* Asegura que la imagen mantenga sus proporciones y recorte si es necesario */
+        background-color: black;
+    }
+</style>
+
+<div class="row mt-4">
+    <div class="col-md-3">
+        <div class="card">
+            <img src="https://i.ebayimg.com/images/g/fYQAAOSwGLFlD3YH/s-l1200.webp" class="card-img-top" alt="Image 1">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="https://i.ebayimg.com/thumbs/images/g/z8YAAOSw52NlpbeC/s-l640.jpg" class="card-img-top" alt="Image 2">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="https://tiendagolperu.com/wp-content/uploads/2023/02/ronaldo.jpeg" class="card-img-top" alt="Image 3">
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="https://cdn.shopify.com/s/files/1/0741/5631/0847/files/WhatsAppImage2023-07-24at15.36.47.jpg?v=1690231896" class="card-img-top" alt="Image 4">
         </div>
     </div>
 </div>
@@ -73,31 +116,9 @@
         <div class="row gx-5 justify-content-center">
             <div class="col-lg-8 col-xl-6">
                 <div class="text-center">
-                    <h2 class="fw-bolder">From our blog</h2>
-                    <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                    <h2 class="small">.</h2>
                 </div>
             </div>
         </div>
-
-        <!-- Call to action-->
-        <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
-            <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
-                <div class="mb-4 mb-xl-0">
-                    <div class="fs-3 fw-bold text-white">New products, delivered to you.</div>
-                    <div class="text-white-50">Sign up for our newsletter for the latest updates.</div>
-                </div>
-                <div class="ms-xl-4">
-                    <div class="input-group mb-2">
-                        <input class="form-control" type="text" placeholder="Email address..." aria-label="Email address..." aria-describedby="button-newsletter" />
-                        <button class="btn btn-outline-light" id="button-newsletter" type="button">Sign up</button>
-                    </div>
-                    <div class="small text-white-50">We care about privacy, and will never share your data.</div>
-                </div>
-            </div>
-        </aside>
-    </div>
-</section>
-</main>
-   
 {% endblock contenido %}
 
