@@ -14,7 +14,7 @@
 {% endblock title %}
 
 {% block contenido %}
-    
+
 <style>
     .boton {
       display: block;
@@ -35,26 +35,27 @@
     .boton:hover {
       background-color: #0056b3;
     }
-  </style>
-
-<style>
     .contenido {
-        margin-left:50px;
-        margin-right:50px
+        margin: 0 50px;
     }
-  </style>
+</style>
 
-    <p><a href="{% url 'Opiniones:agregaropinion' %}" class="boton">Agregar una opinion</a></p>
+  <a href="{% url 'Opiniones:agregaropinion' %}" class="btn boton">Agregar una opinión</a>
 
-    <ul class="list-group contenido">
-      {% for opinion in opiniones %}
-          <li class="list-group-item">
-              <h5 class="mb-1">{{ opinion.titulo }}</h5>
-              <p class="mb-1">{{ opinion.reseña }}</p>
-              <small>{{ opinion.fecha_actualizacion }}</small>
-          </li>
-      {% endfor %}
-  </ul>
-  
+<div class="container mt-4 contenido">
+    <ul class="list-group mt-4">
+        {% for opinion in opiniones %}
+            <li class="list-group-item">
+                <h5 class="mb-1">{{ opinion.titulo }}</h5>
+                <p class="mb-1">{{ opinion.reseña }}</p>
+                <small>{{ opinion.fecha_actualizacion }}</small>
+                <div class="mt-2">
+                    <a href="{% url 'Opiniones:opinion_delete' opinion.id %}" class="btn btn-danger btn-sm">Borrar</a>
+                    <a href="{% url 'Opiniones:opinion_update' opinion.id %}" class="btn btn-primary btn-sm">Cambiar</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock contenido %}

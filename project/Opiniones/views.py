@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from . import models, forms
+from django.views.generic import UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 def home(request):
     query = models.Opinion.objects.all()
@@ -15,3 +17,15 @@ def agregaropinion(request):
     else:
         form = forms.OpinionForm()
     return render(request, "Opiniones/agregaropinion.html", context={"form": form})
+
+class OpinionDelete(DeleteView):
+    model = models.Opinion
+    template_name = "Opiniones/opinion_delete.html"
+    success_url = reverse_lazy("Opinion:home")
+
+class OpinionUpdate(UpdateView):
+    model = models.Opinion
+    template_name = "Opiniones/opinion_update.html"
+    form_class = forms.OpinionForm
+    success_url = reverse_lazy("Opiniones:home")
+
