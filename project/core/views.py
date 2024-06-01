@@ -20,3 +20,6 @@ def register(request: HttpRequest) -> HttpResponse:
     else:
         form = CustomUserCreationForm()
     return render(request, "core/register.html", {"form": form})
+
+def about_me(request):
+    return render(request, "core/about.html")
